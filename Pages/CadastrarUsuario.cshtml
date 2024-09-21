@@ -1,0 +1,33 @@
+﻿@page
+@model Ex5_FormularioRazor_AT.Pages.CadastrarUsuarioModel
+@{
+    ViewData["Title"] = "Adicionar Usuário";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Usuario.Nome"></label>
+        <input asp-for="Usuario.Nome" class="form-control" />
+        <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Usuario.Email"></label>
+        <input asp-for="Usuario.Email" class="form-control" />
+        <span asp-validation-for="Usuario.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Usuario.DataDeNascimento"></label>
+        <input asp-for="Usuario.DataDeNascimento" class="form-control" type="date" />
+        <span asp-validation-for="Usuario.DataDeNascimento" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
