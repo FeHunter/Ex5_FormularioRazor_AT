@@ -6,10 +6,21 @@ namespace Ex5_FormularioRazor_AT.Pages
 {
     public class CadastrarUsuarioModel : PageModel
     {
+        [BindProperty]
         public Usuario Usuario { get; set; }
 
         public void OnGet()
         {
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            return Page();
         }
     }
 }
